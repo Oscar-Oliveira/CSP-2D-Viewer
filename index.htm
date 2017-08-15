@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>CSP2D</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+       
+<script>
+    
+    var maxWidth = 0, maxHeight = 0, zoom = 0;
+    var patternIndex = -1;
+    var Patterns = null;
+    var validadeJSON = false;
+    
+    function changeZoom() {
+        zoom = document.getElementById("slider2").value;
+        drawScene();
+    }
+    
+    function closePrint() {
+        document.getElementById("canvasArea").style.display = "none";
+    }
+        
+</script>
+
+<div id="box-list">
+    <div id="drop-zone"><p id="drop-zone-file" class="drop-zone-ok"></p></div>    
+</div>
+<div id="box-items"></div>
+<div id="svg-containerOuter">
+    <div id="svg-container"></div>
+</div>
+<div id="canvasArea">
+    <img id="close" src="images/close.png" width="27" height="22" title="Close" onclick="closePrint()">
+    <canvas id="canvas"></canvas>
+</div>  
+    
+<div id="toolBox"><input id="slider2" type="range" min="-10" max="10" step="1" value="0" onchange='changeZoom()' orient="vertical"/></div>
+    
+<div id="opacity-provider"><div id="popup"></div></div>    
+
+<div id="menu"><img id="show" src="images/m.png" width="27" height="22" title="Help"></div>
+
+<script src="scripts/rgbcolor.js"></script>
+<script src="scripts/canvg.js"></script>
+<script src="scripts/svg.js"></script>
+<script src="scripts/menu.js"></script>    
+<script src="scripts/data.js"></script>
+<script src="scripts/help.js"></script>
+        
+</body>   
+</html>
