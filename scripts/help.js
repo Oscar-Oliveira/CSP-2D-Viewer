@@ -1,5 +1,5 @@
  var z = function () {
-    
+
     var iDiv = document.createElement('div');
 
     iDiv.appendChild( doP("> Author", 'popupTitle') );
@@ -15,11 +15,18 @@
 
     iDiv.appendChild( doP("Email: oscar.m.oliveira@gmail.com", 'popupText') );
 
+    iDiv.appendChild( doP("> Article", 'popupTitle') );
+	p = doP("Please refer to:", 'popupText');
+	iDiv.appendChild( p );
+
+    p = doP("Oliveira, Ó., Gamboa, D., & Silva, E. : Resources for Two-Dimensional (and Three-Dimensional) Cutting and Packing Solution Methods Research. In Proceedings of the 16th International Conference on Applied Computing 2019. Vol. 53, pp. 131–138. IADIS Press (2019). DOI: 10.33965/ac2019_201912L016", 'popupText');
+	iDiv.appendChild( p );
+
     iDiv.appendChild( doP("> Demo", 'popupTitle') );
-	
+
 	p = doP("Click the link bellow and then click the drop file zone (top left corner).", 'popupText');
 	iDiv.appendChild( p );
-	
+
     p = doP("Link: ", 'popupText');
     p.appendChild(doA("index.htm?demo=true", ''));
     iDiv.appendChild( p );
@@ -27,26 +34,26 @@
     var demotext = 'index.htm?data={"pattern":[{"x":0,"y":0,"w":120,"h":120,"f":10,"tl":0,"o":"Horizontal","shelves":[{"x":0,"y":0,"w":120,"h":10},{"x":15,"y":25,"w":25,"h":25,"r":1},{"x":50,"y":30,"w":15,"h":55},{"x":75,"y":25,"w":25,"h":25},{"x":10,"y":90,"w":100,"h":15}]}]}';
 
     iDiv.appendChild( doP("> URL PARAMATER", 'popupTitle') );
-    
+
 	p = doP("Click the link bellow and then click the drop file zone (top left corner).", 'popupText');
 	iDiv.appendChild( p );
-	 
+
 	p = doP("Example: ", 'popupText');
     p.appendChild(doA(demotext, ''));
     iDiv.appendChild( p );
 
     iDiv.appendChild( doP("> JSON Example", 'popupTitle') );
 
-    p = document.createElement('p');   
+    p = document.createElement('p');
     element = document.createElement('a');
     element.href = "#";
     element.className = "popupText";
     element.textContent = "Download";
-    element.onclick = DownloadJSON; 
-    p.appendChild(element);        
+    element.onclick = DownloadJSON;
+    p.appendChild(element);
     iDiv.appendChild( p );
 
-    iDiv.appendChild (doPre(demoJson, 'popupText')) 
+    iDiv.appendChild (doPre(demoJson, 'popupText'))
 
     document.getElementById("popup").appendChild(iDiv);
 };
